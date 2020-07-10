@@ -24,7 +24,7 @@ README.MD
 ```bash
 ├── azureFrontDoor
 │   └── az
-│       └── deployWebAppandAFD.ps1
+│       └── az_deployWebAppandAFD.ps1
 ```
 
 * Example file structure 2 - networkSecurityGroup (using old Azure PowerShell Module)
