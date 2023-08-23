@@ -1,3 +1,5 @@
+$ErrorActionPreference = "SilentlyContinue"
+
 $tenantId = Read-Host "Enter your Azure tenant ID"
 $clientID = Read-Host "Enter your Azure client ID"
 $clientSecret = Read-host "enter your client secret" -AsSecureString
@@ -17,5 +19,12 @@ $params = @{
 
 $authResult = Invoke-RestMethod @params
 
-# Output the access token
-$token = $authResult.access_token
+if ([string]::IsNullOrEmpty($token)) {
+    Write-output "Token is empty or null"
+    Write-Output "Error: $Error"
+} else {
+    # Output the access token
+    $token = $authResult.access_token
+    Write-Output "Token is $token"
+}
+
